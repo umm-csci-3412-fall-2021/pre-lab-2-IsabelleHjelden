@@ -67,6 +67,13 @@ int is_clean(char* str) {
   // greater than the second.
   result = strcmp(str, cleaned);
 
+  // strlen returns the length of the string
+  // we can free cleaned if the length is not equal to 0
+  // because if it is equal to zero, it is an empty string. 
+  if(strlen(cleaned) != 0) {
+	free(cleaned);  
+  } 
+
   return result == 0;
 }
 
@@ -90,6 +97,5 @@ int main() {
       printf("The string '%s' is NOT clean.\n", strings[i]);
     }
   }
-
   return 0;
 }
